@@ -1,9 +1,28 @@
-<p>ID: {{user.id}}</p>
-<p>Name: {{user.name}}</p>
-<p>Instagram ID:{{user.ig_id}}</p>
+<!doctype html>
+<html>
 
-<a href="/c3visualization">view C3 visualization</a>
-<br/>
-<a href="/visualization">view D3 visualization</a>
+	<head>
+		<title>Photo Feed</title>
+		<!-- STYLESHEETS -->
+		<link rel="stylesheet" type="text/css" href="css/assignment1.css">
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<h1 class="text-center">Account</h1>
+		</br>
+		<div class="account-info text-center" id="account-div">
+		    <p>Username: {{user.name}}</p>
+			<p>Instagram ID:{{user.ig_id}}</p>
+		</div>
+		<div class="text-center">
+			<a href="/c3visualization">view C3 visualization</a>
+			<br/>
+			<a href="/visualization">view D3 visualization</a>
+		</div>
 
 
+		<div class="btnContainer text-center">
+		    <a class="btn" href="/logout">Log Out</a>
+		</div>
+	</head>
+</html>
