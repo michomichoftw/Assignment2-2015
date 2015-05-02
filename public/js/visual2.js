@@ -44,7 +44,7 @@ console.log("testing2");
   node.append("text")
       .attr("dy", ".3em")
       .style("text-anchor", "middle")
-      .text(function(d) { return d.num_users; });
+      .text(function(d) { return d.className.substring(0, d.r / 3); });
 
 });
 
@@ -53,7 +53,6 @@ function classes(data) {
   var classes = [];
 
   _.map(data, function(photo) {
-    var newSize;
     classes.push({
       size: photo.likes.length + 1,
       pic_likes: photo.likes,

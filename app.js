@@ -33,6 +33,10 @@ db.once('open', function (callback) {
   console.log("Database connected succesfully.");
 });
 
+
+var about = require('./routes/about')
+var contact = require('./routes/contact');;
+
 // Passport session setup.
 //   To support persistent login sessions, Passport needs to be able to
 //   serialize users into and deserialize users out of the session.  Typically,
@@ -223,7 +227,7 @@ app.get('/igMediaLikes', ensureAuthenticatedInstagram, function(req, res){
                     var likesObjects = data.map(function(item){
                       tempJSON = {};
                       tempJSON.pic_likes = item.likes.count;
-                      tempJSON.pic_url = item.images.low_resolution.url;
+                      tempJSON.pic_url = item.images.standard_resolution.url;
 
                       return tempJSON;
                     });
@@ -261,6 +265,10 @@ app.get('/c3visualization', ensureAuthenticatedInstagram, function (req, res){
 app.get('/visual2', ensureAuthenticatedInstagram, function (req, res){
   res.render('visual2');
 }); 
+
+
+app.get('/about', about.about);
+app.get('/contact', contact.contact);
 
 app.get('/auth/instagram',
   passport.authenticate('instagram'),
